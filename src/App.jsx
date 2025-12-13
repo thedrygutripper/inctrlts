@@ -20,3 +20,13 @@ export default function App() {
           Professional technology installation services covering Orlando and a 200+ mile radius.
         </p>
         <button style={{ padding: "16px 32px", fontSize: "18px", fontWeight: "bold", backgroundColor: "#4ade80", border: "none", borderRadius: "8px", cursor: "pointer" }}>
+          Get a Free Quote
+        </button>
+      </main>
+
+      <footer style={{ padding: "40px", textAlign: "center", borderTop: "1px solid #222", color: "#777" }}>
+        © {new Date().getFullYear()} InCTRL Technology Services
+      </footer>
+    </div>
+  );
+}
