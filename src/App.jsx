@@ -1,8 +1,8 @@
 import React from "react";
 
 export default function App() {
-  return (
-    <div className="bg-black text-white min-h-screen font-sans">
+
+  <div className="bg-black text-white min-h-screen font-sans">
       <header className="p-6 text-center border-b border-gray-800">
         <h1 className="text-4xl font-extrabold text-green-400">InCTRL Technology Services</h1>
         <p className="text-gray-400 mt-2">
