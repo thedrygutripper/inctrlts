@@ -1,21 +1,12 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+
 export default function App() {
   return (
-    <div style={{
-      minHeight: "100vh",
-      background: "#000",
-      color: "#fff",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexDirection: "column"
-    }}>
-      <h1 style={{ fontSize: "48px", marginBottom: "20px" }}>
-        InCTRL Technology Services
-      </h1>
-
-      <p style={{ color: "#aaa", fontSize: "18px" }}>
-        Security • Cabling • Digital Signage • AV • IT Field Services
-      </p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
