@@ -2,48 +2,27 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <header style={{
-      background: "#000",
-      borderBottom: "1px solid #222",
-      padding: "16px 24px"
-    }}>
-      <nav style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}>
-        <Link to="/" style={{
-          color: "#fff",
-          fontSize: "22px",
-          fontWeight: "bold",
-          textDecoration: "none"
-        }}>
-          InCTRL
-        </Link>
-
-        <div style={{ display: "flex", gap: "24px" }}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-        </div>
-      </nav>
-    </header>
+    <nav style={styles.nav}>
+      <h2 style={styles.logo}>InCTRL</h2>
+      <div style={styles.links}>
+        <Link to="/" style={styles.link}>Home</Link>
+        <Link to="/services" style={styles.link}>Services</Link>
+        <Link to="/about" style={styles.link}>About</Link>
+        <Link to="/contact" style={styles.link}>Contact</Link>
+      </div>
+    </nav>
   );
 }
 
-function NavLink({ to, children }) {
-  return (
-    <Link
-      to={to}
-      style={{
-        color: "#ccc",
-        textDecoration: "none",
-        fontSize: "16px"
-      }}
-    >
-      {children}
-    </Link>
-  );
-}
+const styles = {
+  nav: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "20px 40px",
+    background: "#000",
+    borderBottom: "1px solid #222"
+  },
+  logo: { color: "#fff" },
+  links: { display: "flex", gap: "20px" },
+  link: { color: "#aaa", textDecoration: "none" }
+};
