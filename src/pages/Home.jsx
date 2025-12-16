@@ -1,37 +1,30 @@
-import CTA from "../components/CTA";
-
 export default function Home() {
   return (
-    <div style={styles.page}>
-      <section style={styles.hero}>
-        <h1>InCTRL Technology Services</h1>
-        <p>Security • Cabling • Digital Signage • AV • IT Field Services</p>
-      </section>
+    <section className="pt-32 pb-24 px-6 text-center bg-black">
+      <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+        InCTRL Technology Services
+      </h1>
 
-      <section style={styles.section}>
-        <h2>What We Do</h2>
-        <ul>
-          <li>CCTV & Security Systems</li>
-          <li>Structured Cabling</li>
-          <li>Digital Signage & TV Installation</li>
-          <li>Audio Visual Solutions</li>
-          <li>IT Field Engineering</li>
-        </ul>
-      </section>
+      <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-12">
+        Professional CCTV, structured cabling, digital signage, audiovisual,
+        and IT field services across Central Florida.
+      </p>
 
-      <CTA />
-    </div>
+      <div className="flex justify-center gap-6">
+        <a
+          href="mailto:info@incontrolts.com"
+          className="bg-green-400 text-black px-8 py-4 rounded-xl font-bold hover:scale-105 transition"
+        >
+          Get a Free Quote
+        </a>
+
+        <a
+          href="tel:4076831398"
+          className="border border-gray-700 px-8 py-4 rounded-xl hover:bg-gray-900 transition"
+        >
+          Call Now
+        </a>
+      </div>
+    </section>
   );
 }
-
-const styles = {
-  page: { background: "#000", color: "#fff" },
-  hero: {
-    padding: "120px 40px",
-    textAlign: "center"
-  },
-  section: {
-    padding: "60px 40px",
-    color: "#ccc"
-  }
-};
