@@ -1,20 +1,15 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
-import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col">
-      <Navbar />
-
-      <main className="flex-grow">
-        <Home />
-      </main>
-
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
