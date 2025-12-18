@@ -78,6 +78,7 @@ export default function Services() {
       </section>
 
       <section style={{
-        marginTop: "80px",
-        paddingTop: "40px",
-        borderTop: "1px solid #333
+  marginTop: "80px",
+  paddingTop: "40px",
+  borderTop: "1px solid #333"
+}}>
