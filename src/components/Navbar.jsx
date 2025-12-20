@@ -42,7 +42,7 @@ const styles = {
     letterSpacing: "1px",
   },
   accent: {
-    color: "#1fd67a",
+    color: "#39FF14",
     marginLeft: "2px",
   },
   links: {
