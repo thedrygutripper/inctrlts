@@ -41,13 +41,18 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="relative section-padding bg-gradient-dark text-white overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute -top-40 right-0 w-96 h-96 bg-brand-lime rounded-full mix-blend-lighten filter blur-3xl"></div>
+        <div className="absolute top-1/2 -left-40 w-80 h-80 bg-brand-lime rounded-full mix-blend-lighten filter blur-3xl"></div>
+      </div>
+
+      <div className="container-wide relative z-10">
+        <div className="text-center mb-16" data-aos="fade-down">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Recent Projects
           </h2>
-          <p className="text-xl text-cyan-400">
+          <p className="text-xl text-brand-lime" data-aos="fade-up" data-aos-delay="100">
             Real installations from satisfied customers across Central Florida
           </p>
         </div>
@@ -56,19 +61,21 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/50 hover:bg-white/10 transition-all duration-300 group"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-brand-lime/50 hover:bg-white/10 transition-all duration-300 group"
+              data-aos="fade-up"
+              data-aos-delay={`${index * 100}`}
             >
               <div className="p-6">
-                <div className="bg-cyan-500/20 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <project.icon className="w-7 h-7 text-cyan-400" />
+                <div className="bg-brand-lime/20 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:glow-effect group-hover:scale-110 transition-all">
+                  <project.icon className="w-7 h-7 text-brand-lime" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <h3 className="text-xl font-bold mb-2 group-hover:text-brand-lime transition-colors">{project.title}</h3>
                 <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="bg-white/10 text-cyan-400 px-3 py-1 rounded-full text-sm"
+                      className="bg-white/10 text-brand-lime px-3 py-1 rounded-full text-sm hover:bg-brand-lime/30 transition-colors"
                     >
                       {tag}
                     </span>
@@ -79,10 +86,10 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center" data-aos="zoom-in" data-aos-delay="600">
           <a
             href="#portfolio"
-            className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center gap-2 bg-brand-lime hover:bg-brand-lime-dark text-brand-charcoal px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-2xl hover:glow-effect"
           >
             See Full Portfolio
             <ArrowRight className="w-5 h-5" />
