@@ -35,14 +35,19 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="relative section-padding bg-gradient-dark text-white overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-brand-lime rounded-full mix-blend-screen filter blur-3xl"></div>
+        <div className="absolute bottom-10 right-20 w-96 h-96 bg-brand-lime rounded-full mix-blend-screen filter blur-3xl"></div>
+      </div>
+
+      <div className="container-wide relative z-10">
+        <div className="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Why Customers Choose Us Over Everyone Else
+            Why Choose InnERAL
           </h2>
-          <p className="text-xl text-cyan-400">
-            Better Technology • Better Installations • Better Support
+          <p className="text-xl text-brand-lime" data-aos="fade-up" data-aos-delay="100">
+            Excellence • Innovation • Reliability
           </p>
         </div>
 
@@ -50,21 +55,23 @@ export default function WhyChooseUs() {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl hover:bg-white/10 hover:border-cyan-500/50 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl hover:bg-white/10 hover:border-brand-lime/50 transition-all duration-300 group"
+              data-aos="fade-up"
+              data-aos-delay={`${index * 100}`}
             >
-              <div className="bg-cyan-500/20 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                <reason.icon className="w-7 h-7 text-cyan-400" />
+              <div className="bg-brand-lime/20 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:glow-effect transition-all group-hover:scale-110">
+                <reason.icon className="w-7 h-7 text-brand-lime" />
               </div>
-              <h3 className="text-xl font-bold mb-2">{reason.title}</h3>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-brand-lime transition-colors">{reason.title}</h3>
               <p className="text-gray-300 leading-relaxed">{reason.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center" data-aos="zoom-in" data-aos-delay="600">
           <a
             href="#quote"
-            className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center gap-2 bg-brand-lime hover:bg-brand-lime-dark text-brand-charcoal px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-2xl hover:glow-effect"
           >
             Request a Free Consultation
             <ArrowRight className="w-5 h-5" />
