@@ -25,55 +25,58 @@ export default function LeadForm() {
   };
 
   return (
-    <section id="quote" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="quote" className="relative section-padding bg-white overflow-hidden">
+      <div className="absolute -top-32 right-0 w-96 h-96 bg-brand-lime opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-32 left-0 w-96 h-96 bg-brand-lime opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+          <div data-aos="fade-right" data-aos-duration="1000">
+            <h2 className="text-4xl sm:text-5xl font-bold text-brand-charcoal mb-6">
               Get a Free Quote in Minutes
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-brand-charcoal-lighter mb-8">
               Tell us about your project and we'll get back to you with a detailed quote. No obligation, no pressure.
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-cyan-100 rounded-lg p-3">
-                  <Phone className="w-6 h-6 text-cyan-600" />
+              <div className="flex items-start gap-4 group hover:translate-x-2 transition-transform">
+                <div className="bg-brand-lime/20 rounded-lg p-3 group-hover:glow-effect transition-all group-hover:scale-110">
+                  <Phone className="w-6 h-6 text-brand-lime" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-1">Instant Response</h3>
-                  <p className="text-gray-600">Most quotes delivered within 1-2 hours during business hours</p>
+                  <h3 className="font-bold text-brand-charcoal mb-1 group-hover:text-brand-lime transition-colors">Instant Response</h3>
+                  <p className="text-brand-charcoal-lighter">Most quotes delivered within 1-2 hours during business hours</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-cyan-100 rounded-lg p-3">
-                  <Mail className="w-6 h-6 text-cyan-600" />
+              <div className="flex items-start gap-4 group hover:translate-x-2 transition-transform">
+                <div className="bg-brand-lime/20 rounded-lg p-3 group-hover:glow-effect transition-all group-hover:scale-110">
+                  <Mail className="w-6 h-6 text-brand-lime" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-1">No Spam, Ever</h3>
-                  <p className="text-gray-600">We respect your privacy and never share your information</p>
+                  <h3 className="font-bold text-brand-charcoal mb-1 group-hover:text-brand-lime transition-colors">No Spam, Ever</h3>
+                  <p className="text-brand-charcoal-lighter">We respect your privacy and never share your information</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-cyan-100 rounded-lg p-3">
-                  <MapPin className="w-6 h-6 text-cyan-600" />
+              <div className="flex items-start gap-4 group hover:translate-x-2 transition-transform">
+                <div className="bg-brand-lime/20 rounded-lg p-3 group-hover:glow-effect transition-all group-hover:scale-110">
+                  <MapPin className="w-6 h-6 text-brand-lime" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-1">Free Site Visits</h3>
-                  <p className="text-gray-600">We'll come to your location for detailed assessment</p>
+                  <h3 className="font-bold text-brand-charcoal mb-1 group-hover:text-brand-lime transition-colors">Free Site Visits</h3>
+                  <p className="text-brand-charcoal-lighter">We'll come to your location for detailed assessment</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-10 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl p-6 text-white">
+            <div className="mt-10 bg-gradient-dark rounded-xl p-6 text-white hover:shadow-2xl hover:glow-effect transition-all" data-aos="zoom-in" data-aos-delay="200">
               <h3 className="text-xl font-bold mb-2">Prefer to Talk?</h3>
               <p className="text-gray-300 mb-4">Call us now for immediate assistance</p>
               <a
                 href="tel:+1234567890"
-                className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center gap-2 bg-brand-lime hover:bg-brand-lime-dark text-brand-charcoal px-6 py-3 rounded-lg font-semibold transition-all hover:shadow-lg"
               >
                 <Phone className="w-5 h-5" />
                 (123) 456-7890
@@ -82,10 +85,10 @@ export default function LeadForm() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+          <div className="bg-brand-gray-lighter rounded-2xl shadow-2xl p-8 border border-brand-gray-light" data-aos="fade-left" data-aos-duration="1000">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-semibold text-slate-900 mb-2">
+                <label className="block text-sm font-semibold text-brand-charcoal mb-2">
                   Full Name *
                 </label>
                 <input
@@ -94,13 +97,13 @@ export default function LeadForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-brand-gray-light rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-all"
                   placeholder="John Smith"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-900 mb-2">
+                <label className="block text-sm font-semibold text-brand-charcoal mb-2">
                   Phone Number *
                 </label>
                 <input
@@ -109,13 +112,13 @@ export default function LeadForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-brand-gray-light rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-all"
                   placeholder="(123) 456-7890"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-900 mb-2">
+                <label className="block text-sm font-semibold text-brand-charcoal mb-2">
                   Email Address *
                 </label>
                 <input
@@ -124,13 +127,13 @@ export default function LeadForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-brand-gray-light rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-all"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-900 mb-2">
+                <label className="block text-sm font-semibold text-brand-charcoal mb-2">
                   Service Needed *
                 </label>
                 <select
@@ -138,7 +141,7 @@ export default function LeadForm() {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all bg-white"
+                  className="w-full px-4 py-3 border border-brand-gray-light rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-all bg-white"
                 >
                   <option value="">Select a service...</option>
                   <option value="cctv">CCTV Installation</option>
@@ -152,7 +155,7 @@ export default function LeadForm() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-900 mb-2">
+                <label className="block text-sm font-semibold text-brand-charcoal mb-2">
                   Location / Address *
                 </label>
                 <input
@@ -161,13 +164,13 @@ export default function LeadForm() {
                   value={formData.location}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-brand-gray-light rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-all"
                   placeholder="City or full address"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-900 mb-2">
+                <label className="block text-sm font-semibold text-brand-charcoal mb-2">
                   Preferred Date / Time
                 </label>
                 <input
@@ -175,13 +178,13 @@ export default function LeadForm() {
                   name="date"
                   value={formData.date}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-brand-gray-light rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-all"
                   placeholder="e.g., Next week, ASAP, specific date"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-900 mb-2">
+                <label className="block text-sm font-semibold text-brand-charcoal mb-2">
                   Project Details
                 </label>
                 <textarea
@@ -189,31 +192,31 @@ export default function LeadForm() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 border border-brand-gray-light rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent outline-none transition-all resize-none"
                   placeholder="Tell us more about your project..."
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-900 mb-2">
+                <label className="block text-sm font-semibold text-brand-charcoal mb-2">
                   Upload Photos (Optional)
                 </label>
-                <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-cyan-500 transition-colors cursor-pointer">
-                  <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                  <p className="text-sm text-gray-600">Click to upload or drag and drop</p>
-                  <p className="text-xs text-gray-500 mt-1">PNG, JPG up to 10MB</p>
+                <div className="border-2 border-dashed border-brand-gray-light rounded-lg p-6 text-center hover:border-brand-lime transition-colors cursor-pointer">
+                  <Upload className="w-8 h-8 text-brand-gray mx-auto mb-2" />
+                  <p className="text-sm text-brand-charcoal-lighter">Click to upload or drag and drop</p>
+                  <p className="text-xs text-brand-gray mt-1">PNG, JPG up to 10MB</p>
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                className="w-full bg-gradient-lime hover:bg-brand-lime-dark text-brand-charcoal px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
               >
                 <Send className="w-5 h-5" />
                 Get My Free Quote
               </button>
 
-              <p className="text-xs text-gray-500 text-center">
+              <p className="text-xs text-brand-charcoal-lighter text-center">
                 By submitting this form, you agree to be contacted about your project.
               </p>
             </form>
