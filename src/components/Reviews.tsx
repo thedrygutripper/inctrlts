@@ -41,18 +41,23 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-1 mb-4">
+    <section className="relative section-padding bg-brand-gray-lighter overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none opacity-30">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-lime rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-brand-lime rounded-full mix-blend-multiply filter blur-3xl"></div>
+      </div>
+
+      <div className="container-wide relative z-10">
+        <div className="text-center mb-16" data-aos="fade-down">
+          <div className="flex items-center justify-center gap-1 mb-4" data-aos="zoom-in" data-aos-delay="100">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-8 h-8 fill-yellow-400 text-yellow-400" />
+              <Star key={i} className="w-8 h-8 fill-brand-lime text-brand-lime" />
             ))}
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-brand-charcoal mb-4">
             Customer Reviews
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-brand-charcoal-lighter" data-aos="fade-up" data-aos-delay="200">
             Trusted by hundreds of businesses and homeowners across Central Florida
           </p>
         </div>
@@ -61,41 +66,43 @@ export default function Reviews() {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 relative"
+              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 relative group"
+              data-aos="fade-up"
+              data-aos-delay={`${index * 100}`}
             >
-              <Quote className="w-10 h-10 text-cyan-200 absolute top-4 right-4 opacity-50" />
+              <Quote className="w-10 h-10 text-brand-lime/20 absolute top-4 right-4 opacity-50 group-hover:opacity-100 transition-opacity" />
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-5 h-5 fill-brand-lime text-brand-lime" />
                 ))}
               </div>
-              <p className="text-gray-700 mb-4 leading-relaxed italic">
+              <p className="text-brand-charcoal mb-4 leading-relaxed italic group-hover:text-brand-lime transition-colors">
                 "{review.text}"
               </p>
               <div className="border-t pt-4">
-                <p className="font-bold text-slate-900">{review.name}</p>
-                <p className="text-sm text-gray-600">{review.company}</p>
+                <p className="font-bold text-brand-charcoal group-hover:text-brand-lime transition-colors">{review.name}</p>
+                <p className="text-sm text-brand-charcoal-lighter">{review.company}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center" data-aos="fade-up" data-aos-delay="600">
           <a
             href="#reviews"
-            className="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-lg group"
+            className="inline-flex items-center gap-2 text-brand-lime hover:text-brand-lime-dark font-semibold text-lg group"
           >
             See All Reviews
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl p-8 text-white text-center">
+        <div className="mt-12 bg-gradient-lime rounded-2xl p-8 text-white text-center" data-aos="zoom-in" data-aos-delay="700">
           <h3 className="text-2xl font-bold mb-2">Join Our Satisfied Customers</h3>
           <p className="text-lg mb-6">Experience the difference professional installation makes</p>
           <a
             href="#quote"
-            className="inline-block bg-white text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all"
+            className="inline-block bg-white text-brand-lime px-8 py-3 rounded-lg font-semibold hover:bg-brand-gray-lighter transition-all hover:shadow-lg"
           >
             Get Your Free Quote Today
           </a>
