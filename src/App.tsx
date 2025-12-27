@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import Hero from './components/Hero';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import HeroSlider from './components/HeroSlider';
 import Services from './components/Services';
 import WhyChooseUs from './components/WhyChooseUs';
-import FeaturedSolutions from './components/FeaturedSolutions';
 import ServiceArea from './components/ServiceArea';
 import Projects from './components/Projects';
 import Reviews from './components/Reviews';
@@ -11,15 +12,23 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    document.title = 'CCTV, AV, Cabling & IT Services Orlando | Central Florida Tech Installation';
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      offset: 100,
+      easing: 'ease-in-out-cubic'
+    });
+
+    document.title = 'InnERAL Technology Services - Innovation & Excellence';
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional CCTV installation, digital signage, TV mounting, AV integration, structured cabling, and IT field services across Orlando and Central Florida. Licensed, insured, 10+ years experience. Free quotes.');
+      metaDescription.setAttribute('content', 'InnERAL Technology Services delivers cutting-edge technology solutions with innovation and excellence. Transform your business today.');
     } else {
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content = 'Professional CCTV installation, digital signage, TV mounting, AV integration, structured cabling, and IT field services across Orlando and Central Florida. Licensed, insured, 10+ years experience. Free quotes.';
+      meta.content = 'InnERAL Technology Services delivers cutting-edge technology solutions with innovation and excellence. Transform your business today.';
       document.head.appendChild(meta);
     }
 
@@ -27,17 +36,16 @@ function App() {
     if (!metaKeywords) {
       const meta = document.createElement('meta');
       meta.name = 'keywords';
-      meta.content = 'CCTV installation Orlando, security cameras Central Florida, digital signage installation, TV mounting Orlando, structured cabling, AV integration, IT field services, commercial security systems, residential CCTV, video surveillance Orlando';
+      meta.content = 'technology services, innovation, software solutions, IT services, digital transformation, technology consulting';
       document.head.appendChild(meta);
     }
   }, []);
 
   return (
     <div className="min-h-screen">
-      <Hero />
+      <HeroSlider />
       <Services />
       <WhyChooseUs />
-      <FeaturedSolutions />
       <ServiceArea />
       <Projects />
       <Reviews />
